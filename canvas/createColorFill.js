@@ -1,4 +1,4 @@
-function createColorFill(attrObj){
+function createColorFill(attrObj,ctx,cb){
 	var tempColor,attrObj;
 	attrObj = attrObj || null
 	if(attrObj.fillType === 'colorFill'){
@@ -22,8 +22,19 @@ function createColorFill(attrObj){
 	};
 	
 	ctx.fillStyle = tempColor;
-	
+	console.log(tempColor,ctx.fillStyle)
+	/* 	objJSON = {
+			fillType: String,
+			textFillColor: String || Array,
+			xPositiontextWidth: Number,
+			yPosition: Number,
+			textWidth: Number,
+			xPosition: Number,
+			pattern: Object // image Obj
+		} */
+		cb && cb()
 }
+export default createColorFill;
 
 /*
 	objJSON = {
